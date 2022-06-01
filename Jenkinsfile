@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {                
-                git 'https://github.com/Jaibw/FrozenYogurtShop.git'
+                git ' https://github.com/monsavit/mona-ques2.git'
                 sh "docker build -t jaibw/website004:${env.BUILD_TAG} ."
             }
         }
