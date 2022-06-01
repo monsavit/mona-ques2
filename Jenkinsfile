@@ -14,8 +14,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "sed -i 's/username/${env.BUILD_TAG}/g' k8s-deploy.yaml"
-                sh "kubectl apply -f k8s-deploy.yaml"
+                sh "sed -i 's/username/${env.BUILD_TAG}/g' k8sfile.yaml"
+                sh "kubectl apply -f k8sfile.yaml"
                 sh "kubectl get svc | grep ${env.BUILD_TAG}"
             }
         }
